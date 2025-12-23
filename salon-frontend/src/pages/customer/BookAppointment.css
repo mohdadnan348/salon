@@ -1,0 +1,91 @@
+.booking-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9fafb;
+}
+
+.booking-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.booking-title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2563eb;
+}
+
+.booking-card label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+.booking-card input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+
+.slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.slot-btn {
+  padding: 8px;
+  font-size: 13px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #ffffff;
+  cursor: pointer;
+  color: #2563eb;
+}
+
+.slot-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.confirm-btn {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #16a34a;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background-color: #15803d;
+}
+
+.error-text {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align: center;
+}

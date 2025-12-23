@@ -1,0 +1,17 @@
+export const ROLES = {
+  ADMIN: "ADMIN",
+  CUSTOMER: "CUSTOMER",
+};
+
+export const BOOKING_STATUS = {
+  PENDING: "PENDING",
+  CONFIRMED: "CONFIRMED",
+  CANCELLED: "CANCELLED",
+  COMPLETED: "COMPLETED",
+};
+
+export const PACKAGE_CATEGORY = {
+  BRIDAL: "BRIDAL",
+  GROOM: "GROOM",
+  PARTY: "PARTY",
+};

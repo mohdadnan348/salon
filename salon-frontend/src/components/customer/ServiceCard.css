@@ -1,0 +1,61 @@
+.service-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-image img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 16px;
+}
+
+.service-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.service-category {
+  display: inline-block;
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background-color: #ecfeff;
+  color: #0369a1;
+  margin-bottom: 10px;
+}
+
+.service-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.book-service-btn {
+  width: 100%;
+  background-color: #16a34a;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.book-service-btn:hover {
+  background-color: #15803d;
+}

@@ -1,0 +1,70 @@
+.appointment-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.appointment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.appointment-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.status-badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background-color: #f59e0b; /* amber */
+}
+
+.status-badge.confirmed {
+  background-color: #10b981; /* green */
+}
+
+.status-badge.completed {
+  background-color: #2563eb; /* blue */
+}
+
+.status-badge.cancelled {
+  background-color: #ef4444; /* red */
+}
+
+.appointment-body p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #374151;
+}
+
+.appointment-actions {
+  margin-top: 12px;
+  text-align: right;
+}
+
+.cancel-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
