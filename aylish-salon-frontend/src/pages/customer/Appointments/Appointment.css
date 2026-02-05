@@ -1,0 +1,139 @@
+/* ================= PAGE ================= */
+.appointment-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #fafafa, #ffffff);
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.appointment-box {
+  width: 100%;
+  max-width: 760px;
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.appointment-box h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.appointment-box p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 26px;
+}
+
+/* ================= FORM ================= */
+.appointment-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* full width */
+.package-select,
+.service-multi-select,
+textarea,
+button {
+  grid-column: span 2;
+}
+
+/* ================= INPUTS ================= */
+.appointment-form input,
+.appointment-form textarea,
+.package-select select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* ================= PACKAGE ================= */
+.package-select label,
+.service-multi-select label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* ================= SERVICES (FIXED UI) ================= */
+.service-options {
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 14px;
+  max-height: 240px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  background: #fafafa;
+}
+
+/* CARD */
+.service-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  min-height: 58px;
+}
+
+.service-checkbox:hover {
+  border-color: #000;
+  background: #f9f9f9;
+}
+
+/* CHECKBOX FIX */
+.service-checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: #000;
+  cursor: pointer;
+}
+
+/* TEXT */
+.service-checkbox span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* ================= BUTTON ================= */
+.appointment-form button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* ================= SUCCESS ================= */
+.success-box {
+  text-align: center;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .appointment-form {
+    grid-template-columns: 1fr;
+  }
+
+  .service-options {
+    grid-template-columns: 1fr;
+  }
+}

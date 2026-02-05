@@ -1,0 +1,341 @@
+/* ================= BASE ================= */
+.home {
+  font-family: "Inter", sans-serif;
+  background: #f6f6f6;
+  color: #2b2b2b;
+}
+
+/* ================= HERO ================= */
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  padding: 90px 8%;
+  background: #f6f6f6;
+}
+
+.dotted-bg {
+  background-color: #f6f6f6;
+  background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.badge {
+  background: #ffffff;
+  color: #555;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: inline-block;
+}
+
+/* ================= HERO TEXT ================= */
+.hero-left h1 {
+  font-size: 56px;
+  margin: 20px 0;
+  font-weight: 600;
+  color: #222;
+}
+
+.hero-left h1 span {
+  color: #8c8c8c;
+}
+
+.hero-left p {
+  color: #666;
+  max-width: 520px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ================= BUTTONS ================= */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.hero-actions button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.hero-actions button:first-child {
+  background: #111;
+  color: #fff;
+}
+
+.hero-actions .outline {
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #111;
+}
+
+/* ================= HERO IMAGES ================= */
+.hero-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.hero-images img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.hero-images .img2,
+.hero-images .img4 {
+  margin-top: 40px;
+}
+
+/* ================= SECTION ================= */
+.section {
+  padding: 90px 8%;
+  text-align: center;
+  background: #f6f6f6;
+}
+
+.section.gray {
+  background: #ffffff;
+}
+
+.section h2 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #222;
+}
+
+.subtitle {
+  color: #777;
+  margin: 12px auto 45px;
+  max-width: 640px;
+  font-size: 15px;
+}
+
+/* ================= SERVICES ================= */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 22px;
+  text-align: left;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+  overflow: visible;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  margin-bottom: 14px;
+  color: #222;
+}
+
+/* FIX SERVICE TEXT */
+.service-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.service-card li {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+}
+
+.service-card li.more {
+  color: #999;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ================= PACKAGES ================= */
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.package-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 22px;
+  text-align: left;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+}
+
+.package-letter {
+  height: 130px;
+  background: #f1f1f1;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #aaa;
+  margin-bottom: 18px;
+}
+
+.package-card h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.package-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.package-card button {
+  padding: 12px 24px;
+  border-radius: 26px;
+  background: #111;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.package-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  gap: 12px;
+}
+
+.package-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.book-btn {
+  padding: 10px 18px;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+
+/* ================= GALLERY ================= */
+/* ================= GALLERY ================= */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 300px;              /* 🔥 fixed height */
+  object-fit: cover;          /* 🔥 FULL COVER */
+  border-radius: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Preview Modal */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.img-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+/* ================= MODAL ================= */
+.img-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.img-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+}
+
+/* ================= LINKS ================= */
+.link-btn {
+  margin-top: 45px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #111;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid,
+  .package-grid,
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .section {
+    padding: 70px 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 40px;
+  }
+
+  .service-grid,
+  .package-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

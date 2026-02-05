@@ -1,0 +1,63 @@
+.package-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 18px;
+  padding: 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Tag */
+.package-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #000;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+}
+
+/* Content */
+.package-card h3 {
+  font-size: 17px;
+  margin-bottom: 6px;
+}
+
+.package-card p {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 18px;
+}
+
+/* Footer */
+.package-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.package-price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.package-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.package-btn:hover {
+  background: #000;
+}

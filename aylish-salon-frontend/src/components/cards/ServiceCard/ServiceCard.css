@@ -1,0 +1,68 @@
+.service-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+/* Image */
+.service-image {
+  height: 180px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content */
+.service-content {
+  padding: 18px;
+}
+
+.service-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.service-content p {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 14px;
+}
+
+/* Footer */
+.service-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.book-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #2f2f2f;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.book-btn:hover {
+  background: #000000;
+}

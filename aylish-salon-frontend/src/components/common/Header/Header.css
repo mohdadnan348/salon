@@ -1,0 +1,96 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* 🔥 HEADER HEIGHT CONTROL */
+.header-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 8px 36px;   /* 👈 yahin se header patla hota hai */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 🔥 LOGO — visually bada */
+.header-logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header-logo img {
+  width: 70px;          /* 👈 logo bada */
+  height: auto;
+  object-fit: contain;
+}
+
+/* NAV */
+.header-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.header-nav a.active {
+  color: #111;
+}
+
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #111;
+  transition: 0.3s;
+}
+
+.header-nav a:hover::after,
+.header-nav a.active::after {
+  width: 100%;
+}
+
+/* CALL BUTTON */
+.call-btn {
+  padding: 10px 24px;     /* 👈 button bhi thoda slim */
+  border-radius: 8px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.call-btn:hover {
+  background: #000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .header-nav {
+    display: none;
+  }
+
+  .header-container {
+    padding: 10px 22px;
+  }
+
+  .header-logo img {
+    width: 56px;
+  }
+}

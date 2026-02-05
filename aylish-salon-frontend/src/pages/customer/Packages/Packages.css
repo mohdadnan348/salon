@@ -1,0 +1,87 @@
+/* ================= PAGE ================= */
+.packages-page {
+  width: 100%;
+  background: #ffffff;
+}
+
+/* ================= HERO ================= */
+.packages-hero {
+  padding: 90px 20px 60px;
+  text-align: center;
+  background: linear-gradient(180deg, #fafafa, #ffffff);
+}
+
+.packages-hero h1 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.packages-hero p {
+  font-size: 15px;
+  color: #777;
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ================= CONTAINER ================= */
+.packages-container {
+  padding: 70px 80px 100px;
+}
+
+/* ================= GRID ================= */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* ================= EMPTY ================= */
+.empty-text {
+  text-align: center;
+  color: #999;
+  font-size: 15px;
+  padding: 60px 0;
+}
+
+/* ================= CARD POLISH ================= */
+/* PackageCard wrapper safe hover */
+.packages-grid > * {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.packages-grid > *:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .packages-container {
+    padding: 60px 40px 90px;
+  }
+
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .packages-container {
+    padding: 50px 20px 80px;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .packages-hero h1 {
+    font-size: 30px;
+  }
+
+  .packages-hero p {
+    font-size: 14px;
+  }
+}
