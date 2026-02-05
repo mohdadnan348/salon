@@ -20,42 +20,52 @@ const Dashboard = () => {
     fetchDashboardData();
   }, []);
 
-  const fetchDashboardData = async () => {
-    try {
-      setLoading(true);
-      const res = await getAllAppointments();
-      const data = res.data.data || [];
+ const fetchDashboardData = async () => {
+  try {
+    setLoading(true);
+    const res = await getAllAppointments();
+    const data = res.data.data || [];
 
-      setAppointments(data);
+    setAppointments(data);
 
-      const today = new Date().toISOString().split("T")[0];
+    // ✅ TODAY RANGE (LOCAL TIME)
+    const todayStart = new Date();
+    todayStart.setHours(0, 0, 0, 0);
 
-      let todayCount = 0;
-      let upcomingCount = 0;
-      let pendingCount = 0;
-      let completedCount = 0;
+    const todayEnd = new Date();
+    todayEnd.setHours(23, 59, 59, 999);
 
-      data.forEach((a) => {
-        const apptDate = a.preferredDate?.split("T")[0];
+    let todayCount = 0;
+    let upcomingCount = 0;
+    let pendingCount = 0;
+    let completedCount = 0;
 
-        if (apptDate === today) todayCount++;
-        if (a.status === "Pending") pendingCount++;
-        if (a.status === "Confirmed") upcomingCount++;
-        if (a.status === "Completed") completedCount++;
-      });
+    data.forEach((a) => {
+      const apptDate = new Date(a.preferredDate);
 
-      setStats({
-        today: todayCount,
-        upcoming: upcomingCount,
-        pending: pendingCount,
-        completed: completedCount,
-      });
-    } catch (error) {
-      console.error("Dashboard error", error);
-    } finally {
-      setLoading(false);
-    }
-  };
+      // ✅ TODAY FIX
+      if (apptDate >= todayStart && apptDate <= todayEnd) {
+        todayCount++;
+      }
+
+      if (a.status === "Pending") pendingCount++;
+      if (a.status === "Confirmed") upcomingCount++;
+      if (a.status === "Completed") completedCount++;
+    });
+
+    setStats({
+      today: todayCount,
+      upcoming: upcomingCount,
+      pending: pendingCount,
+      completed: completedCount,
+    });
+  } catch (error) {
+    console.error("Dashboard error", error);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   if (loading) return <Loader text="Loading dashboard..." />;
 
@@ -122,3 +132,4 @@ const StatCard = ({ icon, color, value, label }) => (
 );
 
 export default Dashboard;
+

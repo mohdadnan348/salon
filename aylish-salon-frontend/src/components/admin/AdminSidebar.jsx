@@ -2,13 +2,17 @@ import { NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   Calendar,
-  Scissors,
   Gift,
   Image,
-  Settings,
   LogOut,
 } from "lucide-react";
 import "./AdminSidebar.css";
+
+// ✅ OPTION A: public folder logo
+// <img src="/logo.png" />
+
+// ✅ OPTION B: src/assets logo
+import logo from "../../assets/logo.png";
 
 const AdminSidebar = () => {
   const navigate = useNavigate();
@@ -21,9 +25,8 @@ const AdminSidebar = () => {
   return (
     <aside className="admin-sidebar">
       {/* LOGO */}
-      <div className="sidebar-logo">
-        <div className="logo-circle">✂️</div>
-        <span>AYlish Admin</span>
+        <div className="sidebar-logo">
+        <img src={logo} alt="AYlish Admin" className="sidebar-logo-img" />
       </div>
 
       {/* MENU */}
@@ -38,8 +41,6 @@ const AdminSidebar = () => {
           Appointments
         </NavLink>
 
-       
-
         <NavLink to="/admin/packages" className="menu-item">
           <Gift size={18} />
           Packages
@@ -48,11 +49,6 @@ const AdminSidebar = () => {
         <NavLink to="/admin/gallery" className="menu-item">
           <Image size={18} />
           Gallery
-        </NavLink>
-
-        <NavLink to="/admin/settings" className="menu-item">
-          <Settings size={18} />
-          Settings
         </NavLink>
       </nav>
 

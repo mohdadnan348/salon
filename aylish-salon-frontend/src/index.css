@@ -64,3 +64,106 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: #b5b5b5;
 }
+
+
+/* .whatsapp-float {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  border-radius: 30%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+} */
+
+/* ====== FLOATING WHATSAPP BUTTON (FIXED - NO DISAPPEAR) ====== */
+.whatsapp-float {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px;
+  background: #25D366 !important;
+  padding: 15px !important;
+  border-radius: 20% !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4) !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 0 !important;
+  z-index: 99999 !important;
+  transition: all 0.3s ease !important;
+  width: 60px !important;
+  height: 60px !important;
+  -webkit-tap-highlight-color: transparent;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:active {
+  background: #1ebe5d !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5) !important;
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.whatsapp-float svg {
+  width: 30px !important;
+  height: 30px !important;
+  display: block !important;
+  flex-shrink: 0;
+  fill: white !important;
+}
+
+.whatsapp-float span {
+  display: none !important;
+}
+
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 52px !important;
+    height: 52px !important;
+    padding: 12px !important;
+    border-radius: 50% !important; /* mobile pe round better lagta hai */
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.35) !important;
+  }
+
+  .whatsapp-float svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .whatsapp-float {
+    bottom: 14px !important;
+    right: 14px !important;
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .whatsapp-float svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}

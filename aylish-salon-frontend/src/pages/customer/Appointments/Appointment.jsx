@@ -9,12 +9,15 @@ import { getAllServices } from "../../../services/service.service";
 import { getAllPackages } from "../../../services/package.service";
 import { createAppointment } from "../../../services/appointment.service";
 
+const HAIR_WIG_SERVICE = "Hair Wig / Hair Patch Consultation";
+
 const Appointment = () => {
   const [services, setServices] = useState([]);
   const [packages, setPackages] = useState([]);
   const [pageLoading, setPageLoading] = useState(true);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
   const [form, setForm] = useState({
     name: "",
@@ -24,6 +27,7 @@ const Appointment = () => {
     date: "",
     time: "",
     notes: "",
+    hairWigConsultation: false,
   });
 
   /* ================= FETCH ================= */
@@ -33,13 +37,11 @@ const Appointment = () => {
         const serviceRes = await getAllServices();
         const pkgRes = await getAllPackages();
 
-        // flatten services
         const flatServices = [];
         serviceRes.data.data.forEach((group) => {
           group.items.forEach((s) => flatServices.push(s));
         });
 
-        // only active packages
         const activePackages = (pkgRes.data || []).filter(
           (p) => p.isActive
         );
@@ -58,7 +60,19 @@ const Appointment = () => {
 
   /* ================= HANDLERS ================= */
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+
+    // 📞 MOBILE VALIDATION
+    if (name === "mobile") {
+      if (!/^\d*$/.test(value)) return;
+      if (value.length > 10) return;
+    }
+
+    setForm({
+      ...form,
+      [name]: type === "checkbox" ? checked : value,
+    });
+    setError("");
   };
 
   const toggleService = (service) => {
@@ -73,24 +87,34 @@ const Appointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (form.mobile.length !== 10) {
+      setError("Mobile number must be exactly 10 digits");
+      return;
+    }
+
     if (
       !form.name ||
-      !form.mobile ||
       !form.date ||
       !form.time ||
-      (form.services.length === 0 && !form.package)
+      (form.services.length === 0 &&
+        !form.package &&
+        !form.hairWigConsultation)
     ) {
-      alert("Please select at least one service or a package");
+      setError("Please select at least one service or consultation");
       return;
     }
 
     try {
       setLoading(true);
 
-      // combine services + package safely
-      const finalServices = [...form.services];
+      let finalServices = [...form.services];
+
       if (form.package) {
         finalServices.push(`Package: ${form.package}`);
+      }
+
+      if (form.hairWigConsultation) {
+        finalServices.push(HAIR_WIG_SERVICE);
       }
 
       await createAppointment({
@@ -100,7 +124,7 @@ const Appointment = () => {
         preferredDate: form.date,
         preferredTime: form.time,
         notes: form.notes,
-        gender: "Female",
+        gender: "Male",
       });
 
       setSuccess(true);
@@ -112,6 +136,7 @@ const Appointment = () => {
         date: "",
         time: "",
         notes: "",
+        hairWigConsultation: false,
       });
     } catch (error) {
       alert("Failed to book appointment");
@@ -128,7 +153,7 @@ const Appointment = () => {
     <div className="appointment-page">
       <div className="appointment-box">
         <h2>Book Appointment</h2>
-        <p>Select services or a package and we’ll take care of the rest</p>
+        <p>Select services or a package and we'll take care of the rest</p>
 
         {success ? (
           <div className="success-box">
@@ -151,12 +176,29 @@ const Appointment = () => {
             <input
               type="tel"
               name="mobile"
-              placeholder="Mobile Number *"
+              placeholder="Mobile Number (10 digits) *"
               value={form.mobile}
               onChange={handleChange}
             />
 
-            {/* ================= PACKAGE DROPDOWN ================= */}
+            {error && <p className="error-text">{error}</p>}
+
+            {/* 🔹 HAIR WIG CONSULTATION */}
+            <div className="hair-wig-consultation-box">
+              <label className="hair-wig-consultation-item">
+                <input
+                  type="checkbox"
+                  name="hairWigConsultation"
+                  checked={form.hairWigConsultation}
+                  onChange={handleChange}
+                />
+                <span className="consultation-text">
+                  Hair Wig / Hair Patch Consultation
+                </span>
+              </label>
+            </div>
+
+            {/* PACKAGE */}
             <div className="package-select">
               <label>Select Package (optional)</label>
               <select
@@ -173,18 +215,18 @@ const Appointment = () => {
               </select>
             </div>
 
-            {/* ================= SERVICES ================= */}
+            {/* SERVICES */}
             <div className="service-multi-select">
               <label>Select Services *</label>
               <div className="service-options">
                 {services.map((service) => (
-                  <label key={service} className="service-checkbox">
+                  <label key={service} className="service-item-card">
                     <input
                       type="checkbox"
                       checked={form.services.includes(service)}
                       onChange={() => toggleService(service)}
                     />
-                    <span>{service}</span>
+                    <span className="service-text">{service}</span>
                   </label>
                 ))}
               </div>

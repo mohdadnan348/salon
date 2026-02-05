@@ -148,3 +148,39 @@
   border-radius: 12px;
   color: #777;
 }
+.actions {
+  display: flex;
+  gap: 12px;            /* 👈 यही main fix है */
+  margin-top: 10px;
+}
+
+/* Buttons thode balanced lage */
+.confirm-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .confirm-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}

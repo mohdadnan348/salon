@@ -73,3 +73,21 @@
 .sidebar-footer:hover {
   background: #f5f5f5;
 }
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+}
+
+.sidebar-logo-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.sidebar-logo-text {
+  font-size: 16px;
+  font-weight: 600;
+}

@@ -53,61 +53,118 @@ button {
   font-size: 14px;
 }
 
-/* ================= PACKAGE ================= */
+/* ================= LABELS ================= */
 .package-select label,
 .service-multi-select label {
   font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 8px;
+  font-weight: 600;
+  margin-bottom: 10px;
   display: block;
 }
 
-/* ================= SERVICES (FIXED UI) ================= */
+/* ================= SERVICES WRAPPER ================= */
 .service-options {
   border: 1px solid #ddd;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 14px;
-  max-height: 240px;
+  max-height: 260px;
   overflow-y: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 14px;
   background: #fafafa;
 }
 
-/* CARD */
-.service-checkbox {
+/* ================= SERVICE CARD (MAIN SERVICES) ================= */
+.service-item-card {
   display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 14px 20px;
   border-radius: 14px;
   background: #fff;
-  border: 1px solid #eee;
+  border: 1px solid #e5e5e5;
   cursor: pointer;
   transition: all 0.25s ease;
-  min-height: 58px;
+  min-height: 56px;
 }
 
-.service-checkbox:hover {
+.service-item-card:hover {
   border-color: #000;
   background: #f9f9f9;
 }
 
-/* CHECKBOX FIX */
-.service-checkbox input {
+/* checkbox */
+.service-item-card input[type="checkbox"] {
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
   accent-color: #000;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-top: 3px;
 }
 
-/* TEXT */
-.service-checkbox span {
+/* service text */
+.service-item-card .service-text {
   font-size: 14px;
   font-weight: 500;
   color: #333;
   line-height: 1.4;
+  white-space: normal;
+}
+
+/* ================= HAIR WIG BOX ================= */
+.hair-wig-consultation-box {
+  margin: 18px 0;
+  padding: 14px;
+  border: 1px dashed #ccc;
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.hair-wig-consultation-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  font-weight: 500;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hair-wig-consultation-item:hover {
+  border-color: #000;
+  background: #f9f9f9;
+}
+
+.hair-wig-consultation-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #000;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  margin-top: 3px;
+}
+
+.hair-wig-consultation-item .consultation-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+}
+
+.hair-wig-consultation-item small {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-top: 4px;
 }
 
 /* ================= BUTTON ================= */
@@ -125,6 +182,13 @@ button {
 /* ================= SUCCESS ================= */
 .success-box {
   text-align: center;
+}
+
+/* ================= ERROR ================= */
+.error-text {
+  grid-column: span 2;
+  color: #c62828;
+  font-size: 13px;
 }
 
 /* ================= RESPONSIVE ================= */

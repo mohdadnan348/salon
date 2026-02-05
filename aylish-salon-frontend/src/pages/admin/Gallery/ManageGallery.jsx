@@ -6,14 +6,17 @@ import {
 } from "../../../services/gallery.service";
 import "./ManageGallery.css";
 
-const CATEGORIES = [
-  "All",
-  "Bridal",
-  "Hair",
-  "Skin",
-  "Makeup",
-  "Before / After",
-];
+// UI label → backend value mapping
+const CATEGORY_MAP = {
+  All: "",
+  Bridal: "bridal",
+  Hair: "hair",
+  Skin: "skin",
+  Makeup: "makeup",
+  "Before / After": "Before / After",
+};
+
+const CATEGORIES = Object.keys(CATEGORY_MAP);
 
 const ManageGallery = () => {
   const [images, setImages] = useState([]);
@@ -25,16 +28,12 @@ const ManageGallery = () => {
   const [title, setTitle] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // 🔹 Fetch images
+  // 🔹 Fetch images (CATEGORY FIX)
   const fetchImages = async () => {
     try {
-      const apiCategory =
-        activeCategory === "All" ? "" : activeCategory;
-
+      const apiCategory = CATEGORY_MAP[activeCategory];
       const res = await getGalleryImages(apiCategory);
-
-      // ✅ always use backend standard shape
-      setImages(res.data.data || []);
+      setImages(res?.data?.data || []);
     } catch (err) {
       console.error("Fetch gallery error:", err);
     }
@@ -53,7 +52,7 @@ const ManageGallery = () => {
       setLoading(true);
       const formData = new FormData();
       formData.append("image", file);
-      formData.append("category", category);
+      formData.append("category", CATEGORY_MAP[category]);
       formData.append("title", title);
 
       await uploadGalleryImage(formData);
@@ -90,10 +89,7 @@ const ManageGallery = () => {
           <h2>Gallery</h2>
           <p>Manage your salon portfolio images</p>
         </div>
-        <button
-          className="primary-btn"
-          onClick={() => setShowModal(true)}
-        >
+        <button className="primary-btn" onClick={() => setShowModal(true)}>
           + Add Image
         </button>
       </div>
@@ -119,15 +115,10 @@ const ManageGallery = () => {
 
         {images.map((item) => (
           <div key={item._id} className="gallery-card">
-            <img
-              src={item.image?.url}
-              alt={item.title || item.category}
-            />
+            <img src={item.image?.url} alt={item.title || item.category} />
             <div className="overlay">
               <span>{item.title || item.category}</span>
-              <button onClick={() => handleDelete(item._id)}>
-                🗑
-              </button>
+              <button onClick={() => handleDelete(item._id)}>🗑</button>
             </div>
           </div>
         ))}
@@ -139,10 +130,7 @@ const ManageGallery = () => {
           <form className="modal" onSubmit={handleUpload}>
             <div className="modal-header">
               <h3>Add New Image</h3>
-              <button
-                type="button"
-                onClick={() => setShowModal(false)}
-              >
+              <button type="button" onClick={() => setShowModal(false)}>
                 ✕
               </button>
             </div>
@@ -160,11 +148,9 @@ const ManageGallery = () => {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
-              {CATEGORIES.filter((c) => c !== "All").map(
-                (c) => (
-                  <option key={c}>{c}</option>
-                )
-              )}
+              {CATEGORIES.filter((c) => c !== "All").map((c) => (
+                <option key={c}>{c}</option>
+              ))}
             </select>
 
             <label>Title (Optional)</label>

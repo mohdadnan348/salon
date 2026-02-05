@@ -76,46 +76,14 @@ const Home = () => {
         </div>
 
         <div className="hero-images">
-          <img src={hero1} />
-          <img src={hero2} className="img2" />
-          <img src={hero3} />
-          <img src={hero4} className="img4" />
+          <img src="https://i.pinimg.com/736x/c7/40/e7/c740e7edd8553ab6a4bc5a061ee7da65.jpg"/>
+          <img src="https://i.pinimg.com/1200x/c2/cf/69/c2cf69d4eccc8689fe719fb2b3692095.jpg" className="img2" />
+          <img src= "https://i.pinimg.com/1200x/b9/2a/5b/b92a5bdcc3af0573193575499186c88c.jpg"/>
+          <img src="https://i.pinimg.com/736x/e0/5f/69/e05f69fdc81a94c0e679b1009adcd1d1.jpg" className="img4" />
         </div>
       </section>
 
-      {/* ================= SERVICES =================
-      <section className="section">
-        <h2>Our Services</h2>
-        <p className="subtitle">
-          Most loved & frequently booked salon services
-        </p>
-
-        <div className="service-grid">
-          {Object.entries(groupedServices)
-            .slice(0, 3)
-            .map(([category, items]) => (
-              <div className="service-card" key={category}>
-                <h3>{category}</h3>
-
-                <ul className="service-list">
-                  {items.slice(0, 4).map((srv) => (
-                    <li key={srv._id}>{srv.name}</li>
-                  ))}
-
-                  {items.length > 4 && (
-                    <li className="more">
-                      + {items.length - 4} more services
-                    </li>
-                  )}
-                </ul>
-              </div>
-            ))}
-        </div>
-
-        <button className="link-btn" onClick={() => navigate("/services")}>
-          View All Services →
-        </button>
-      </section> */}
+      
 
       {/* ================= SERVICES ================= */}
 <section className="section">
@@ -165,34 +133,6 @@ const Home = () => {
 </section>
 
 
-      {/* ================= PACKAGES ================= */}
-      {/* <section className="section gray">
-        <h2>Special Packages</h2>
-        <p className="subtitle">
-          Wedding, party & special occasion packages
-        </p>
-
-        <div className="package-grid">
-          {packages.slice(0, 3).map((pkg) => (
-            <div className="package-card" key={pkg._id}>
-              <div className="package-letter">
-                {pkg.name?.charAt(0)}
-              </div>
-
-              <h3>{pkg.name}</h3>
-              <p>{pkg.description}</p>
-
-              <button onClick={() => navigate("/book")}>
-                Book Now
-              </button>
-            </div>
-          ))}
-        </div>
-
-        <button className="link-btn" onClick={() => navigate("/packages")}>
-          View All Packages →
-        </button>
-      </section> */}
 
 {/* ================= PACKAGES ================= */}
 <section className="section gray">
@@ -242,6 +182,53 @@ const Home = () => {
   </button>
 </section>
 
+{/* ================= HAIR PATCH SECTION ================= */}
+<section className="hair-patch-section">
+  <div className="hair-patch-content">
+   
+
+    <h2>Hair Patch & Hair Wig Solutions</h2>
+
+    <p>
+      We provide premium, natural-looking hair patch and hair wig solutions
+      specially designed for men facing hair loss or baldness.
+    </p>
+
+    <p>
+      Our non-surgical hair replacement systems are lightweight, comfortable,
+      and perfectly matched to your natural hair texture and color.
+    </p>
+
+    <ul>
+      <li>100% Natural Look & Feel</li>
+      <li>Non-Surgical & Painless</li>
+      <li>Custom Fit for Every Head Type</li>
+      <li>Long-Lasting & Easy Maintenance</li>
+      <li>Designed Exclusively for Men</li>
+    </ul>
+
+    <button
+      className="primary-btn"
+      onClick={() => navigate("/appointment")}
+    >
+      Book a Consultation →
+    </button>
+  </div>
+
+  <div className="hair-patch-images">
+    <img
+      src="https://i.pinimg.com/736x/80/79/d6/8079d61727a2d560a0b004838c390fc3.jpg"
+      alt="Hair Patch Service"
+    />
+    <img
+      src="https://i.pinimg.com/736x/91/72/fa/9172fab029e7aac7ca56b1e5da4a1065.jpg"
+      alt="Hair Wig Service"
+    />
+  </div>
+</section>
+
+
+
 
       {/* ================= GALLERY (OLD WORKING LOGIC) ================= */}
       <section className="section">
@@ -274,5 +261,6 @@ const Home = () => {
     </div>
   );
 };
+
 
 export default Home;

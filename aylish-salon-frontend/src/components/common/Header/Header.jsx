@@ -26,7 +26,7 @@ const Header = () => {
         {/* CALL BUTTON */}
         <button
           className="call-btn"
-          onClick={() => window.open("tel:+919876543210")}
+          onClick={() => window.open("tel:+9199355 62426")}
         >
           Call Now
         </button>

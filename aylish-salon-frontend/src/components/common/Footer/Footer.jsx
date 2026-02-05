@@ -36,7 +36,7 @@ const Footer = () => {
       <div className="footer-main">
         <div className="footer-col brand">
           <div className="brand-logo">
-            ✂️ <span>AYlish Salon</span>
+            
           </div>
           <p>
             Where Beauty Meets Elegance. Experience premium salon
@@ -58,7 +58,8 @@ const Footer = () => {
           <h4>Contact Us</h4>
           <ul>
             <li>📞 +91 99355 62426</li>
-            <li>✉️ hello@aylishsalon.com</li>
+            <li>✉️ aylishsalon@gmail.com
+</li>
             <li>
               📍 105/68 Ghadi Wali Masjid,<br />
                   Hafeez Building, Chaman Ganj,<br />
@@ -72,8 +73,8 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Opening Hours</h4>
           <ul>
-            <li>🕒 10:00 – 20:00</li>
-            <li>❌ Closed on Monday</li>
+            <li>🕒 10:00 AM – 11:00 PM</li>
+            <li>❌ Closed on Tuesday</li>
           </ul>
         </div>
       </div>
